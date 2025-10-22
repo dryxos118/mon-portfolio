@@ -1,7 +1,6 @@
 import React from "react";
 import type { EducationItem } from "../../types";
 import { Card } from "../common/Card";
-import { FaGraduationCap } from "react-icons/fa";
 
 type Props = { item: EducationItem };
 
