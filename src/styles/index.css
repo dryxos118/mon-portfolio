@@ -1,0 +1,353 @@
+:root,
+[data-bs-theme="light"] {
+  color-scheme: light;
+
+  --color-background: #f7f7f9;
+  --color-surface: #e4e7eb;
+  --color-surface-2: #f0f0f3;
+  --color-primary: #4c5897;
+  --color-primary-hover: #5c69ac;
+  --color-primary-active: #36437a;
+  --color-secondary: #504c97;
+  --color-secondary-hover: #605cac;
+  --color-secondary-active: #3b3979;
+  --color-text: #1e1e1e;
+  --color-border: rgba(0, 0, 0, 0.4);
+  --elevation-2: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+  --badge-default-bg: rgba(76, 88, 151, 0.12);
+  --badge-default-bg-hover: rgba(76, 88, 151, 0.25);
+  --badge-default-border: rgba(0, 0, 0, 0.08);
+  --badge-default-shadow: rgba(76, 88, 151, 0.2);
+  --badge-default-text: #2a2a2a;
+
+  --bs-body-bg: var(--color-background);
+  --bs-body-color: var(--color-text);
+  --bs-primary: var(--color-primary);
+  --bs-secondary: var(--color-secondary);
+  --bs-card-bg: var(--color-surface);
+  --bs-card-border-color: rgba(0, 0, 0, 0.1);
+  --bs-navbar-bg: var(--color-surface);
+  --bs-footer-bg: var(--color-surface);
+}
+
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: #1e2029;
+  --color-surface: #242631;
+  --color-surface-2: #282a36;
+  --color-text: #e0e0e0;
+  --color-border: rgba(255, 255, 255, 0.4);
+  --elevation-2: 0 5px 15px rgba(255, 255, 255, 0.08);
+
+  --badge-default-bg: rgba(76, 88, 151, 0.2);
+  --badge-default-bg-hover: rgba(76, 88, 151, 0.35);
+  --badge-default-border: rgba(255, 255, 255, 0.12);
+  --badge-default-shadow: rgba(76, 88, 151, 0.3);
+  --badge-default-text: #e6e6e6;
+}
+
+/* Base */
+
+body {
+  font-family: "Ubuntu", "Cantarell", "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif !important;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  section {
+    scroll-margin-top: 275px;
+  }
+}
+
+/* Divider */
+
+.d-divider {
+  width: 2px;
+  background-color: var(--color-border);
+  border-radius: 1px;
+}
+
+/* Tooltip */
+
+.d-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  transform: translateX(-50%);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  padding: 8px 12px;
+  border-radius: 10px;
+  white-space: nowrap;
+  box-shadow: var(--elevation-2);
+  z-index: 20;
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+}
+
+.d-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--color-border) transparent transparent transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
+}
+
+/* Badge */
+
+.d-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+  cursor: default;
+  transition: all 0.25s ease;
+  border: 1px solid var(--badge-default-border);
+  background: var(--badge-default-bg);
+  color: var(--badge-default-text);
+}
+
+.d-tech-badge:hover {
+  background: var(--badge-default-bg-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px var(--badge-default-shadow);
+}
+
+.d-tech-badge svg {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+/* Scroll top */
+
+.d-scroll-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 10px;
+}
+
+.d-scroll-top-btn:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Hero */
+
+.hero-avatar {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.25);
+}
+
+/* OVVERIDE BOOSTRAP */
+
+/* Multiple */
+
+.card,
+.navbar,
+footer {
+  background-color: var(--bs-card-bg) !important;
+  color: var(--bs-body-color);
+}
+
+/* Bordures plus douces */
+.card,
+.navbar,
+footer {
+  border-color: var(--bs-card-border-color) !important;
+}
+
+/* Navbar */
+
+.navbar {
+  box-shadow: var(--elevation-2);
+}
+
+.navbar .nav-link {
+  color: var(--color-text);
+}
+
+.navbar .nav-link:hover {
+  color: var(--color-primary-hover);
+}
+
+.navbar .nav-link.active {
+  position: relative;
+  font-weight: 600;
+  color: var(--color-primary-hover) !important;
+}
+
+.navbar .nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.45rem;
+  margin: auto;
+  width: 16px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 999px;
+  opacity: 0.9;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler:focus-visible {
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-link {
+    display: block;
+    text-align: left;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar .nav-link.active::after {
+    bottom: 0;
+    left: 20px;
+    right: auto;
+    transform: none;
+    width: 20px;
+  }
+}
+
+/* Cards */
+
+.card {
+  --bs-card-bg: var(--color-surface-2);
+  border-color: var(--bs-card-border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.05);
+}
+
+/* Text */
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+/* Border */
+
+.border {
+  --bs-border-color: var(--color-border);
+}
+
+/* Btn */
+
+.btn:focus-visible {
+  box-shadow: none;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary-hover);
+  --bs-btn-hover-border-color: var(--color-primary-hover);
+  --bs-btn-active-bg: var(--color-primary-active);
+  --bs-btn-active-border-color: var(--color-primary-active);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-bg: var(--color-primary-hover);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: var(--color-primary);
+}
+
+.btn-secondary {
+  --bs-btn-bg: var(--color-secondary);
+  --bs-btn-border-color: var(--color-secondary);
+  --bs-btn-hover-bg: var(--color-secondary-hover);
+  --bs-btn-hover-border-color: var(--color-secondary-hover);
+  --bs-btn-active-bg: var(--color-secondary-active);
+  --bs-btn-active-border-color: var(--color-secondary-active);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--color-secondary);
+  --bs-btn-border-color: var(--color-secondary);
+  --bs-btn-hover-bg: var(--color-secondary-hover);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-border-color: var(--color-secondary);
+}
+
+/* Input */
+
+.input-group .form-control,
+.input-group .input-group-text {
+  box-shadow: none !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input-group .input-group-text {
+  border-right: none !important;
+  background-color: transparent;
+}
+
+.input-group .form-control {
+  border-left-color: var(--color-border);
+}
+
+.input-group:has(.form-control:focus) .form-control,
+.input-group:has(.form-control:focus) .input-group-text {
+  box-shadow: none !important;
+  border-color: var(--color-primary-active) !important;
+}
+
+.input-group:has(.form-control:hover) .form-control,
+.input-group:has(.form-control:hover) .input-group-text {
+  border-color: var(--color-primary-hover) !important;
+}
