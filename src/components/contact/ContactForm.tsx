@@ -9,10 +9,6 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { useTheme } from "../../logic/hooks/useTheme";
 
-const SERVICE_ID = "service_14z3zdg";
-const TEMPLATE_ID = "template_ao1nvuq";
-const PUBLIC_KEY = "95JVxvUFvUAJ66a8Z";
-
 export const ContactForm: React.FC = () => {
   const [form, setForm] = useState({
     title: "",
@@ -65,9 +61,14 @@ export const ContactForm: React.FC = () => {
 
     setSending(true);
 
-    const sendPromise = emailjs.send(SERVICE_ID, TEMPLATE_ID, params, {
-      publicKey: PUBLIC_KEY,
-    });
+    const sendPromise = emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      params,
+      {
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      }
+    );
 
     toast.promise(
       sendPromise,
