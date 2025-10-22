@@ -10,8 +10,6 @@ import { toast } from "react-toastify";
 import { useTheme } from "../../logic/hooks/useTheme";
 
 export const ContactForm: React.FC = () => {
-  console.log(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-
   const [form, setForm] = useState({
     title: "",
     name: "",
