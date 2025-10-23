@@ -2,6 +2,7 @@ import React from "react";
 import type { Project } from "../../types";
 import { Card } from "../common/Card";
 import PLACEHOLDER from "../../assets/images/placeholderimage.png";
+import { ProjectsCodeButton } from "./ProjectsCodeButton";
 
 type Props = { project: Project };
 
@@ -30,16 +31,11 @@ export const ProjectsCard: React.FC<Props> = ({ project }) => {
             Voir
           </a>
         )}
-        {project.repo && (
-          <a
-            href={project.repo}
-            className="btn btn-secondary btn-sm w-100"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Code
-          </a>
-        )}
+        <ProjectsCodeButton
+          repoUrl={project.repoUrl}
+          repoFront={project.repoFront}
+          repoBack={project.repoBack}
+        />
       </Card.Footer>
     </Card>
   );

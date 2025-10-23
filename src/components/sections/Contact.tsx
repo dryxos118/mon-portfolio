@@ -9,7 +9,7 @@ export const Contact: React.FC = () => {
       <div className="container">
         <SectionHeader
           title="Contact"
-          subTitle="Une idée, un projet ou juste envie d'échanger ? Écris-moi et je te répondrai rapidement."
+          subTitle="Envie d’échanger ou de collaborer ? Écris-moi."
         />
 
         <div className="mx-auto" style={{ maxWidth: "600px" }}>

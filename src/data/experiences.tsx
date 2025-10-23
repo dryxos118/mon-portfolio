@@ -27,7 +27,7 @@ export const EDUCATIONS: EducationItem[] = [
     id: "edu2",
     title: "Formation développeur Web & Web Mobile",
     school: "Foreach Academy",
-    period: "2023 - Formation de 6 mois",
+    period: "Septembre 2022 - Août 2023",
     description: `Apprentissage des bases du développement web moderne :
       HTML, CSS, JavaScript, React.js, Node.js, Express, gestion de bases de données et utilisation de Git/GitHub.`,
   },

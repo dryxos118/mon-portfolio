@@ -26,6 +26,7 @@ export const Tooltip: React.FC<Props> = ({ text, children }) => {
       className="position-relative d-inline-block"
       onMouseEnter={show}
       onMouseLeave={hide}
+      onClick={hide}
     >
       {children}
 

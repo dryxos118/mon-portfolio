@@ -39,7 +39,9 @@ export interface Project {
   readonly tags: readonly string[];
   readonly image?: string;
   readonly link?: string;
-  readonly repo?: string;
+  readonly repoUrl?: string;
+  readonly repoFront?: string;
+  readonly repoBack?: string;
 }
 
 /* SKILL */

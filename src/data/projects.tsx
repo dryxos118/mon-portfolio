@@ -12,7 +12,8 @@ export const PROJECTS: Project[] = [
       Développement d’une API REST sécurisée avec Spring Boot et intégration d’un front moderne Vue 3 / Vuetify.
       Authentification via JWT et gestion dynamique des catégories, ingrédients et favoris.`,
     tags: ["Spring Boot", "Vue 3", "Vuetify", "JPA/Hibernate", "JWT"],
-    repo: "https://github.com/dryxos118/the_bar-app_web",
+    repoFront: "https://github.com/dryxos118/the_bar-app_web",
+    repoBack: "https://github.com/dryxos118/the_bar_app",
   },
   {
     id: "p2",
@@ -22,7 +23,7 @@ export const PROJECTS: Project[] = [
       Suivi des dépenses, création de comptes et visualisation de données via tableaux et graphiques interactifs.
       Authentification sécurisée par JWT et stockage côté serveur avec ASP.NET / C#.`,
     tags: ["Blazor", "MudBlazor", "C#", "ASP.NET", "JWT"],
-    repo: "https://github.com/dryxos118/PocketBudget",
+    repoUrl: "https://github.com/dryxos118/PocketBudget",
   },
   {
     id: "p3",
@@ -32,7 +33,7 @@ export const PROJECTS: Project[] = [
       Design moderne et responsive avec Bootstrap, animations légères et navigation fluide par ancres.
       Présente mes projets, compétences et expériences de manière claire.`,
     tags: ["React", "TypeScript", "Bootstrap", "EmailJS"],
-    link: "#",
-    repo: "https://github.com/dryxos118/mon-portfolio",
+    link: "https://dryxos118.github.io/mon-portfolio/",
+    repoUrl: "https://github.com/dryxos118/mon-portfolio",
   },
 ];
