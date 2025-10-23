@@ -3,6 +3,7 @@ import type { Project } from "../../types";
 import { Card } from "../common/Card";
 import PLACEHOLDER from "../../assets/images/placeholderimage.png";
 import { ProjectsCodeButton } from "./ProjectsCodeButton";
+import { FaEye } from "react-icons/fa";
 
 type Props = { project: Project };
 
@@ -24,11 +25,12 @@ export const ProjectsCard: React.FC<Props> = ({ project }) => {
         {project.link && (
           <a
             href={project.link}
-            className="btn btn-primary btn-sm w-100"
+            className="btn btn-primary btn-sm w-100 d-flex align-items-center justify-content-center gap-2"
             target="_blank"
             rel="noreferrer"
           >
-            Voir
+            <FaEye />
+            Voir le site
           </a>
         )}
         <ProjectsCodeButton
